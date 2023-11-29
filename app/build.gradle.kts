@@ -5,16 +5,19 @@ plugins {
 
 android {
     namespace = "com.example.fragementstest"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.fragementstest"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures{
+        viewBinding = true
     }
 
     buildTypes {
@@ -33,9 +36,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
+    val fragment_version = "1.6.2"
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
